@@ -1,6 +1,5 @@
 package com.josk.venom.controller;
 
-import com.josk.venom.exception.ProductNotFoundException;
 import com.josk.venom.model.Product;
 import com.josk.venom.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -35,7 +33,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Product>> getProductById(@PathVariable Long id) {
+    public ResponseEntity<Product> getProductById(@PathVariable Long id) {
         return new ResponseEntity<>(productService.getProductById(id), HttpStatus.CREATED);
     }
 
