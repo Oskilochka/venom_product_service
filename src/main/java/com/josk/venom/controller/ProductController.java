@@ -1,5 +1,6 @@
 package com.josk.venom.controller;
 
+import com.josk.venom.exception.ProductNotFoundException;
 import com.josk.venom.model.Product;
 import com.josk.venom.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -27,14 +28,14 @@ public class ProductController {
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
     }
 
-    @PostMapping
-    public Product createProduct(@RequestBody Product product) {
-        return productService.createProduct(product);
+    @GetMapping("/{id}")
+    public Product getProductById(@PathVariable Long id) {
+        return productService.getProductById(id);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable Long id) {
-        return new ResponseEntity<>(productService.getProductById(id), HttpStatus.CREATED);
+    @PostMapping
+    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
+        return new ResponseEntity<>(productService.createProduct(product), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
@@ -44,7 +45,11 @@ public class ProductController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
-        productService.deleteProduct(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        try {
+            productService.deleteProduct(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (ProductNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }
