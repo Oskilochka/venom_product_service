@@ -33,7 +33,9 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findById(id)
                 .map(existingCategory -> {
                             existingCategory.setName(product.getName());
+                            existingCategory.setDescription(product.getDescription());
                             existingCategory.setPrice(product.getPrice());
+                            existingCategory.setStock(product.getStock());
                             return productRepository.save(existingCategory);
                         }
                 ).orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
