@@ -1,4 +1,4 @@
-package com.josk.venom.configuration;
+package com.josk.venom.products.configuration;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -14,9 +14,9 @@ public class OpenApiConfig {
     @Bean
     public OpenAPI customApi() {
         return new OpenAPI().info(new Info()
-                .title("Product API")
+                .title("Product Service API")
                 .version("0.1")
-                .description("Documentation for venom project")
+                .description("Documentation for Product Management Service")
         );
     }
 }

@@ -1,8 +1,8 @@
-package com.josk.venom.controller;
+package com.josk.venom.products.controller;
 
-import com.josk.venom.exception.ProductNotFoundException;
-import com.josk.venom.model.Product;
-import com.josk.venom.service.ProductService;
+import com.josk.venom.products.exception.ProductNotFoundException;
+import com.josk.venom.products.model.Product;
+import com.josk.venom.products.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

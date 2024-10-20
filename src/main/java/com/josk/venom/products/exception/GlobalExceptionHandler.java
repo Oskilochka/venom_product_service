@@ -1,4 +1,4 @@
-package com.josk.venom.exception;
+package com.josk.venom.products.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +18,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException exception) {
         Map<String, String> errors = new HashMap<>();
 
-        exception.getBindingResult().getFieldErrors().forEach(e -> {
-            errors.put(e.getField(), e.getDefaultMessage());
-        });
+        exception.getBindingResult().getFieldErrors().forEach(e -> errors.put(e.getField(), e.getDefaultMessage()));
 
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }

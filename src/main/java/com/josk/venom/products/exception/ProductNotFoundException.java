@@ -1,4 +1,4 @@
-package com.josk.venom.exception;
+package com.josk.venom.products.exception;
 
 
 public class ProductNotFoundException extends RuntimeException {

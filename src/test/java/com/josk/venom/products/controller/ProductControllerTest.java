@@ -1,9 +1,9 @@
-package com.josk.venom.controller;
+package com.josk.venom.products.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.josk.venom.exception.ProductNotFoundException;
-import com.josk.venom.model.Product;
-import com.josk.venom.service.ProductServiceImpl;
+import com.josk.venom.products.exception.ProductNotFoundException;
+import com.josk.venom.products.model.Product;
+import com.josk.venom.products.service.ProductServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

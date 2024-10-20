@@ -1,6 +1,6 @@
-package com.josk.venom.service;
+package com.josk.venom.products.service;
 
-import com.josk.venom.model.Product;
+import com.josk.venom.products.model.Product;
 
 import java.util.List;
 

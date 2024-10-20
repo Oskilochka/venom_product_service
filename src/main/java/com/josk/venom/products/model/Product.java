@@ -1,4 +1,4 @@
-package com.josk.venom.model;
+package com.josk.venom.products.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

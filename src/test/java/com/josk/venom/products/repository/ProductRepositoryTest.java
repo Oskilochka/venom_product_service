@@ -1,6 +1,6 @@
-package com.josk.venom.repository;
+package com.josk.venom.products.repository;
 
-import com.josk.venom.model.Product;
+import com.josk.venom.products.model.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

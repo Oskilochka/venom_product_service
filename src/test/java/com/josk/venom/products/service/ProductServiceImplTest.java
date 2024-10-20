@@ -1,8 +1,8 @@
-package com.josk.venom.service;
+package com.josk.venom.products.service;
 
-import com.josk.venom.exception.ProductNotFoundException;
-import com.josk.venom.model.Product;
-import com.josk.venom.repository.ProductRepository;
+import com.josk.venom.products.exception.ProductNotFoundException;
+import com.josk.venom.products.model.Product;
+import com.josk.venom.products.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
