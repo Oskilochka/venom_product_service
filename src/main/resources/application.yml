@@ -1,0 +1,32 @@
+server:
+  port: 5050
+
+spring:
+  application:
+    name: venom_product_service
+
+  datasource:
+    url: ${DB_SOURCE}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  secret: ${JWT_SECRET}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+  fetch-registry: true
